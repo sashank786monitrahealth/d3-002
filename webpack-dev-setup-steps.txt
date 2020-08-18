@@ -1,0 +1,12 @@
+mkdir 002-dev-env-webpack
+cd 002-dev-env-webpack/
+npm init -y
+npm i webpack webpack-cli webpack-dev-server --save-dev
+npm i d3
+mkdir src dist
+touch dist/index.html
+touch src/main.js
+touch webpack.config.js
+npm run build
+npm start
+
