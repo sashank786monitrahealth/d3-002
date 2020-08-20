@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enter Exit Update</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+<style>
+p{
+    background: navy;
+    color:yellow;
+    font-size: 30px;
+    width: 100px;
+    margin: 20px;
+    padding:10px;
+}
+.person{
+    background: dodgerblue;
+    color:yellow;
+    font-size: 30px;
+    width: 100px;
+    margin: 20px;
+    padding:10px;
+}
+</style>
+</head>
+<body>
+
+    <!--No of data points = No of existing elements (Update Selection)-->
+    <div id="div1">
+      <p>Chair 1</p>
+      <p>Chair 2</p>
+      <p>Chair 3</p>
+      <p>Chair 4</p>
+    </div>
+
+    <!--No of data points > No of existing elements (Enter Selection)
+    <div id="div2">
+      <p>Chair 1</p>
+      <p>Chair 2</p>
+      <p>Chair 3</p>
+    </div>
+    -->
+    
+    <!--No of data points < No of existing elements (Exit Selection)
+    <div id="div3">
+      <p>Chair 1</p>
+      <p>Chair 2</p>
+    </div>
+    -->
+
+    <script type="text/javascript">
+    
+    let myData = ["Person 1","Person 2","Person 3","Person 4"];
+
+    update = d3.select("div")
+               .selectAll("p")
+               .data(myData)
+               .text(function(d){
+                   return d;
+               });
+    console.log(update);
+    </script>
+</body>
+</html>
